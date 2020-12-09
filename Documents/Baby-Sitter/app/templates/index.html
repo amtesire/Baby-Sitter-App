@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% block content %}
-<header class="masthead" style="background-image: url('https://picsum.photos/1900/1267?grayscale'); margin-top: 40px;">
+<header class="masthead" style="background-image: url('https://i2.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/2020/07/31/Prima%20Pagina/ImmaginiWeb/Ritagli/AdobeStock_216241731-babysitter-giochi-bonus-kjJF--1020x533@IlSole24Ore-Web.jpeg'); margin-top: 40px;">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -13,10 +13,10 @@
     </div>
   </div>
 </header>
-<a href="#psts"><h2 class="text-center">New Posts
+<a href="#psts"><h2 class="text-center" style="color: rgb(16, 202, 235)">New Posts
 </h2></a>
 <br> <br>
-<div class="container" id="psts">
+<div class="container-fluid" id="psts" style="background-image: url('https://i2.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/2020/07/31/Prima%20Pagina/ImmaginiWeb/Ritagli/AdobeStock_216241731-babysitter-giochi-bonus-kjJF--1020x533@IlSole24Ore-Web.jpeg'); background-repeat: no-repeat;background-size: cover;">
   <div class="row" >
     <div class="col-lg-8 col-md-10 mx-auto">
       {%for post in posts[::-1]%}

@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% block content %}
-<header class="masthead" style="background-image: url('https://picsum.photos/1900/1267?grayscale'); margin-top: 40px;">
+<header class="masthead" style="background-image: url('https://www.izideals.sn/images-property/cb0e348239778979fce0cdd190ec5db1a521debc-MECA7U.jpg'); margin-top: 40px;">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -24,18 +24,9 @@
         </div>
     </div>
 </header>
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-
-            </div>
-        </div>
-    </div>
-</article>
 <hr>
 <section>
-    <div class="container">
+    <div class="container-fluid" style ="background-image:url('https://images.unsplash.com/photo-1519689680058-324335c77eba?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'); background-repeat: no-repeat; background-size:cover;">
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
@@ -54,7 +45,7 @@
                                 <div class="col-md-2 col-sm-2 col-xs-2">
                                     <img src="https://image.ibb.co/jw55Ex/def_face.jpg"
                                         class="img img-rounded img-fluid" />
-                                    <p class="text-secondary text-center">{{comment.comment_at.strftime('%B %d, %Y')}}</p>
+                                    <p class="text-success text-center">{{comment.comment_at.strftime('%B %d, %Y')}}</p>
                                 </div>
                                 <div class="col-md-10">
                                     <div>
@@ -63,7 +54,7 @@
                                     <div class="clearfix"></div>
                                     <p>{{comment.comment}}</p>
                                     <div style="margin-right: 10px;">
-                                        <a href="{{url_for('main.fav_comment', id = post.id, comment_id = comment.id)}}" style="margin-left: 5px;" class="float-right btn text-white btn-success"> <i class="fas fa-thumbs-up"></i>
+                                        <a href="{{url_for('main.fav_comment', id = post.id, comment_id = comment.id)}}" style="margin-left: 5px;" class="float-right btn text-white btn-info"> <i class="fas fa-thumbs-up"></i>
                                             {{comment.like_count}}</a>
                                         {%if current_user.is_authenticated%}
                                             {%if current_user.id == post.user_id%}
@@ -87,7 +78,7 @@
                             {{comment_form.comment(class = "form-control", placeholder = "Write a comment")}}
 
                             <div class="text-right" style="margin-top: 10px;">
-                                {{comment_form.submit(class = "btn btn-outline-dark btn-sm")}}
+                                {{comment_form.submit(class = "btn btn-outline-success btn-sm")}}
                             </div>
                         </form>
                     </div>
