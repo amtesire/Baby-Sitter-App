@@ -1,0 +1,3 @@
+Hello, a new post has been posted, visit our site to view it.
+
+{{user_fname}} {{user_lname}}.
