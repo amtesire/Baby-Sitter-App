@@ -39,7 +39,7 @@ def post(id):
         comment_form.alias.data = ""
         if current_user.is_authenticated:
             comment_alias = current_user.username
-        new_comment = Comment(comment = comment,
+        new_comment = Comment(comment = review,
                             comment_at = datetime.now(),
                             comment_by = comment_alias,
                             post_id = id)
@@ -80,7 +80,7 @@ def edit_post(id):
         edit_form.title.data = ""
         post.post_content = edit_form.post.data
         edit_form.post.data = ""
-
+        post.post_address = edit_form.contact.data
         db.session.add(post)
         db.session.commit()
         return redirect(url_for("main.post", id = post.id))
@@ -103,8 +103,11 @@ def new_post():
                                                                             "i", "hr", "a"
                                                                             "ul", "ol", "li"])
         post_form.post.data = ""
+        post_address = post_form.contact.data
+        post_form.contact.data = ""
         new_post = Post(post_title = post_title,
                         post_content = post_content,
+                        post_address = post_address,
                         posted_at = datetime.now(),
                         post_by = current_user.username,
                         user_id = current_user.id)

@@ -8,7 +8,7 @@
 
 footer {
     text-align: center;
-    background-color: rgb(204, 255, 255);
+    background-color: rgb(244, 194, 194);
 }
 
 .content {
@@ -112,9 +112,9 @@ footer {
 }
 
 .profile-content {
-    padding: 20px;
-    background: #fff;
-    min-height: 460px;
+    padding: 5px;
+    background: rgb(43, 221, 153);
+    min-height: 10px;
 }
 
 .nav>li {
@@ -122,3 +122,9 @@ footer {
     display: block;
 }
 
+:hover{
+    padding: 6px;
+    background-color:pink;
+    color:black;
+    
+  }

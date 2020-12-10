@@ -13,14 +13,13 @@
     </div>
   </div>
 </header>
-<a href="#psts"><h2 class="text-center" style="color: rgb(16, 202, 235)">New Posts
+<a href="#psts"><h2 class="text-center" style="color: rgb(16, 202, 235)">Available Baby Sitters
 </h2></a>
-<br> <br>
-<div class="container-fluid" id="psts" style="background-image: url('https://i2.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/2020/07/31/Prima%20Pagina/ImmaginiWeb/Ritagli/AdobeStock_216241731-babysitter-giochi-bonus-kjJF--1020x533@IlSole24Ore-Web.jpeg'); background-repeat: no-repeat;background-size: cover;">
+<div class="container-fluid" id="psts" style="background-image: url('https://i2.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/2020/07/31/Prima%20Pagina/ImmaginiWeb/Ritagli/AdobeStock_216241731-babysitter-giochi-bonus-kjJF--1020x533@IlSole24Ore-Web.jpeg'); background-repeat: no-repeat;background-size: cover;opacity: 1;">
   <div class="row" >
     <div class="col-lg-8 col-md-10 mx-auto">
       {%for post in posts[::-1]%}
-      <div class="post-preview">
+      <div class="post-preview" style="background-color: pink; font-family: Dancing Script, Impallari Type;">
         <a href="{{url_for('main.post', id = post.id)}}">
           <h2 class="post-title">
             {{post.post_title}}
@@ -32,10 +31,10 @@
             {{post.post_contact | truncate (45) | safe}}
           </h4>
         </a>
-        <p class="post-meta">Posted by
-          <a href="{{url_for('main.profile', id = post.user_id)}}">{{post.post_by}}</a> on
+        <strong><p class="post-meta">Posted 
+          <!--<a href="{{url_for('main.profile', id = post.user_id)}}">{{post.post_by}}</a>--> on
           {{post.posted_at.strftime('%B %d, %Y')}}
-        </p>
+        </p></strong>
       </div>
       <hr>
       {%endfor%}

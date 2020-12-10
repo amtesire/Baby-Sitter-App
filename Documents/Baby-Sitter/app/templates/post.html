@@ -9,11 +9,13 @@
                     <h1>{{post.post_title}}</h1>
                     <div class="content">
                         {{post.post_content | safe}}
+                        <br>
+                        {{post.post_address | safe}}
                     </div> <br> <br>
-                    <span class="meta">Posted by
+                    <strong><span class="meta">Posted by
                         <a href="{{url_for('main.profile', id = post.user_id)}}">{{post.post_by}}</a>
                         on {{post.posted_at.strftime('%B %d, %Y')}}
-                    </span>
+                    </span></strong>
                     {%if comment_count == 1%}
                         <small>{{comment_count}} comment</small>
                     {%else%}
@@ -30,15 +32,15 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <h2>Comments</h2>
+                <h2>Reviews</h2>
             </div>
             <div class="col-lg-2"></div>
         </div>
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <div class="comments">
-                    {%for comment in comments%}
+                <div class="reviews">
+                    {%for review in reviews%}
                     <div class="card" style="margin-bottom: 7px;">
                         <div class="card-body">
                             <div class="row">
@@ -49,13 +51,13 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div>
-                                        <strong>{{comment.comment_by}}</strong>
+                                        <strong>{{review.review_by}}</strong>
                                     </div>
                                     <div class="clearfix"></div>
-                                    <p>{{comment.comment}}</p>
+                                    <p>{{review.review}}</p>
                                     <div style="margin-right: 10px;">
-                                        <a href="{{url_for('main.fav_comment', id = post.id, comment_id = comment.id)}}" style="margin-left: 5px;" class="float-right btn text-white btn-info"> <i class="fas fa-thumbs-up"></i>
-                                            {{comment.like_count}}</a>
+                                        <a href="{{url_for('main.fav_comment', id = post.id, comment_id = comment.id)}}" style="margin-left: 5px;" class="float-right btn text-white btn-primary"> <i class="fas fa-heart"></i>
+                                            {{review.like_count}}</a>
                                         {%if current_user.is_authenticated%}
                                             {%if current_user.id == post.user_id%}
                                                 <a href="{{url_for('main.delete_comment', id = post.id, comment_id = comment.id)}}" class="float-right btn text-white btn-danger"> <i
@@ -75,7 +77,7 @@
                             {{comment_form.hidden_tag()}}
                             {{comment_form.alias(class = "form-control", placeholder = "Enter a name")}}
                             <br>
-                            {{comment_form.comment(class = "form-control", placeholder = "Write a comment")}}
+                            {{comment_form.comment(class = "form-control", placeholder = "Write a review")}}
 
                             <div class="text-right" style="margin-top: 10px;">
                                 {{comment_form.submit(class = "btn btn-outline-success btn-sm")}}

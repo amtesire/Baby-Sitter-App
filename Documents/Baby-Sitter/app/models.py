@@ -59,6 +59,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     post_title = db.Column(db.String)
     post_content = db.Column(db.Text)
+    post_address = db.Column(db.String)
     posted_at = db.Column(db.DateTime)
     upvotes = db.Column(db.Integer, default = 0)
     downvotes = db.Column(db.Integer, default = 0)

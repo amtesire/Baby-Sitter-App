@@ -6,13 +6,12 @@
             <div class="profile-sidebar position-fixed">
                 {%if user.username == 'baby'%}
                 <div class="profile-userpic">
-                    <img src="https://avatars3.githubusercontent.com/u/71210383?s=400&v=4"
-                        class="img-responsive" alt="" height="250" width="250">
+                    <img src="{{url_for('static',filename=user.profile_pic_path)}}" style="height:250px; width:250px;" alt="" class="img-thumbnail">
                 </div>
                 {%else%}
                 <div class="profile-userpic">
-                    <img src="https://image.ibb.co/jw55Ex/def_face.jpg"
-                    class="img-responsive" alt="" height="250" width="250">
+                    <!--<img src="https://image.ibb.co/jw55Ex/def_face.jpg"
+                    class="img-responsive" alt="" height="250" width="250">-->
                 </div>
                 {%endif%}
                 <div class="profile-usertitle">
@@ -36,9 +35,9 @@
                 <div class="profile-usermenu sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('main.update_profile', id = user.id)}}">
+                            <!--<a class="nav-link" href="{{url_for('main.update_profile', id = user.id)}}">
                                 <i class="fas fa-user-edit"></i>
-                                Account Settings </a>
+                                Account Settings </a>-->
                         </li>
                     </ul>
                 </div>
@@ -47,13 +46,13 @@
             </div>
         </div>
         <div class="col-md-9">
-            <div class="profile-content">
+            <div class="container-fluid profile-content" style="background-color:#A5DED3;background-repeat: no-repeat;background-size: cover;opacity: 1;">
                 {%for post in posts[::-1]%}
                 <div class="post-preview">
                     {%if current_user.is_authenticated%}
                     <div style="float: right; padding-bottom: 50px">
-                        <a href="{{url_for('main.edit_post', id = post.id)}}" class="btn btn-outline-info btn-sm"><i class="far fa-edit"></i></a>
-                        <a href="{{url_for('main.delete_post', id = user.id, post_id = post.id)}}" class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></a>
+                        <a href="{{url_for('main.edit_post', id = post.id)}}" class="btn btn-outline-success btn-sm"><i class="fas fa-user-edit"></i></a>
+                        <a href="{{url_for('main.delete_post', id = user.id, post_id = post.id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-trash"></i></a>
                     </div>
                     {%endif%}
                     <a href="{{url_for('main.post', id = post.id)}}">
@@ -64,8 +63,8 @@
                             {{post.post_content | truncate(45) | safe}}
                         </h3>
                     </a>
-                    <div class="post-meta">Posted by
-                        <a href="/profile/{{post.user_id}}">{{post.post_by}}</a>
+                    <div class="post-meta">Posted
+                        <!--<a href="/profile/{{post.user_id}}">{{post.post_by}}</a>-->
                         on {{post.posted_at.strftime('%B %d, %Y')}}
                     </div>
                 </div>

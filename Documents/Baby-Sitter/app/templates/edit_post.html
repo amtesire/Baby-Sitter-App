@@ -3,7 +3,7 @@
 {%block content%}
 <br><br><br>
 <div class="container">
-    <div class="container">
+    <div class="container" style="background-color: rgb(34, 209, 221);">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
@@ -14,12 +14,12 @@
                     <br>
                     {{edit_form.post.label}} {{edit_form.post(class = "form-control", value = post.post_content)}}
                     <br>
-                    {{edit_form.contact.label}} {{edit_form.contact(class = "form-control", value = post.post_contact)}}
+                    {{edit_form.contact.label}} {{edit_form.contact(class = "form-control", value = post.post_address)}}
                     <br>
                     {{edit_form.submit(class = "btn btn-primary")}}
                 </form>
             </div>
-            <div class="col-md-2"></div>
+            <!--<div class="col-md-2"></div>-->
         </div>
     </div>
 </div>

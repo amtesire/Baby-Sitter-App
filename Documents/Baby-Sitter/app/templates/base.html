@@ -14,10 +14,14 @@
 
   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'type='text/css'>
+  <!--<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <script src="https://kit.fontawesome.com/2e65670cdd.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.google.com/specimen/Indie+Flower" rel="stylesheet">
+  <!--<script src="https://kit.fontawesome.com/2e65670cdd.js"></script>-->
+  <script src="https://kit.fontawesome.com/8ca67530c8.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery.min.js"></script>
 
   <link href="{{ url_for('static', filename='css/clean-blog.min.css') }}" rel="stylesheet">
@@ -27,7 +31,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg fixed-top" style="background-color:rgb(244, 194, 194);">
-    <a class="navbar-brand" href="/" style="font-family: 'Major Mono Display', monospace; font-size: 30px">Baby<sub><small>Sit Me</small></sub></a>
+    <a class="navbar-brand" href="/" style="font-family: 'Montserrat Subrayada', sans-serif; font-size: 40px; color: white;">BabySitt<sub><small>Me</small></sub></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -37,7 +41,7 @@
       <ul class="navbar-nav mr-auto">
         {%if current_user.is_authenticated%}
         <li class="nav-item">
-          <a class="nav-link" href="/post/new">Register</a>
+          <a class="nav-link" href="/post/new" style="color: white;">Register</a>
         </li>
         {%endif%}
       </ul>
@@ -58,13 +62,13 @@
           {%else%}
           <form class="form-inline my-2 my-lg-0" method="POST">
             <input class="form-control mr-sm-2" type="email" placeholder="Email" name="subscriber" required>
-            <button class="btn btn-outline-secondary btn-sm" type="submit" style="padding: 5px;">SUBSCRIBE</button>
+            <!--<button class="btn btn-outline-secondary btn-sm" type="submit" style="padding: 5px;">SUBSCRIBE</button>-->
           </form>
           <li class="nav-item">
-            <a class="nav-link" href="/authenticate/login">Login</a>
+            <a class="nav-link" href="/authenticate/login" style="color: white;">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/authenticate/signup">SignUp</a>
+            <a class="nav-link" href="/authenticate/signup" style="color: white;">SignUp</a>
           </li>
           {%endif%}
         </ul>
@@ -81,10 +85,10 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <ul class="list-inline text-center">
           <li class="list-inline-item">
-            <a href="https://github.com/amtesire" target="_blank">
+            <a href="https://twitter.com/home" target="_blank">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
               </span>
             </a>
           </li>
