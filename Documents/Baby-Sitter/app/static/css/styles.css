@@ -122,9 +122,3 @@ footer {
     display: block;
 }
 
-:hover{
-    padding: 6px;
-    background-color:pink;
-    color:black;
-    
-  }
