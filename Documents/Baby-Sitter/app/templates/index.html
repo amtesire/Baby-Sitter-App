@@ -19,7 +19,7 @@
   <div class="row" >
     <div class="col-lg-8 col-md-10 mx-auto">
       {%for post in posts[::-1]%}
-      <div class="post-preview" style="background-color: pink; font-family: Dancing Script, Impallari Type;">
+      <div class="post-preview" style="background-color: pink;">
         <a href="{{url_for('main.post', id = post.id)}}">
           <h2 class="post-title">
             {{post.post_title}}

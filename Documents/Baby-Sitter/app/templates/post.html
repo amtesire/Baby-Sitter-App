@@ -10,10 +10,12 @@
                     <div class="content">
                         {{post.post_content | safe}}
                         <br>
+                        <br>
+                        <br>
                         {{post.post_address | safe}}
                     </div> <br> <br>
-                    <strong><span class="meta">Posted by
-                        <a href="{{url_for('main.profile', id = post.user_id)}}">{{post.post_by}}</a>
+                    <strong><span class="meta">Posted
+                        <!--<a href="{{url_for('main.profile', id = post.user_id)}}">{{post.post_by}}</a>-->
                         on {{post.posted_at.strftime('%B %d, %Y')}}
                     </span></strong>
                     {%if comment_count == 1%}

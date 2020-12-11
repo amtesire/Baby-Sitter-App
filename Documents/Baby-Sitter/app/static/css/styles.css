@@ -2,14 +2,14 @@
     flex: 1 0 auto;
 }
 
-.footer {
+/*.footer {
     flex-shrink: 0;
-}
+}*/
 
-footer {
+/*footer {
     text-align: center;
-    background-color: rgb(244, 194, 194);
-}
+    background-color: rgb(16, 192, 192);
+}*/
 
 .content {
     margin-top: 60px;
